@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>حجز موعد - ورشة السيارات</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>ورشة السيارات</h1>
+            <nav>
+                <a href="index.html">الرئيسية</a>
+                <a href="my-cars.html">سياراتي</a>
+                <a href="book-appointment.html" class="active">حجز موعد</a>
+                <a href="my-bookings.html">حجوزاتي</a>
+                <a href="logout.html">تسجيل خروج</a>
+            </nav>
+        </header>
+
+        <main>
+            <div class="booking-form-container">
+                <h2>حجز موعد صيانة</h2>
+                <form id="bookingForm">
+                    <div class="form-group">
+                        <label for="car">اختر السيارة *</label>
+                        <select id="car" name="car" required>
+                            <option value="">-- اختر سيارة --</option>
+                            <option value="1">تويوتا كامري 2020 - ABC123</option>
+                            <option value="2">هيونداي توسان 2019 - XYZ789</option>
+                            <option value="3">كيا سبورتاج 2021 - LMN456</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="service">نوع الخدمة *</label>
+                        <select id="service" name="service" required>
+                            <option value="">-- اختر خدمة --</option>
+                            <option value="oil-change">تغيير زيت المحرك</option>
+                            <option value="brake-check">فحص الفرامل</option>
+                            <option value="tire-rotation">تبديل الإطارات</option>
+                            <option value="engine-diagnostic">فحص المحرك</option>
+                            <option value="ac-service">صيانة التكييف</option>
+                            <option value="full-checkup">فحص شامل</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="date">تاريخ الموعد *</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="time">الوقت المفضل *</label>
+                        <select id="time" name="time" required>
+                            <option value="">-- اختر وقت --</option>
+                            <option value="08:00">08:00 صباحاً</option>
+                            <option value="09:00">09:00 صباحاً</option>
+                            <option value="10:00">10:00 صباحاً</option>
+                            <option value="11:00">11:00 صباحاً</option>
+                            <option value="12:00">12:00 ظهراً</option>
+                            <option value="13:00">01:00 ظهراً</option>
+                            <option value="14:00">02:00 ظهراً</option>
+                            <option value="15:00">03:00 عصراً</option>
+                            <option value="16:00">04:00 عصراً</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="notes">ملاحظات إضافية (اختياري)</label>
+                        <textarea id="notes" name="notes" rows="4" placeholder="اكتب أي ملاحظات إضافية هنا..."></textarea>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn-primary">تأكيد الحجز</button>
+                        <button type="reset" class="btn-secondary">إعادة تعيين</button>
+                    </div>
+                </form>
+
+                <div id="successMessage" class="success-message hidden">
+                    <h3>✓ تم حجز موعدك بنجاح!</h3>
+                    <p>رقم الحجز: <strong id="bookingNumber"></strong></p>
+                    <p>سيتم إرسال تأكيد عبر البريد الإلكتروني.</p>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 ورشة السيارات - جميع الحقوق محفوظة</p>
+        </footer>
+    </div>
+
+    <script src="booking.js"></script>
+</body>
+</html>
